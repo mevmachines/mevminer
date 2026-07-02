@@ -1,0 +1,9 @@
+{
+  "name": "mevminer",
+  "version": "26.07.0-alpha",
+  "description": "Ethereum MEV Searcher metadata",
+  "main": "index.js",
+  "repository": "https://github.com/mevmachines/mevminer.git",
+  "author": "MEVBOTS",
+  "license": "GPL v3"
+}

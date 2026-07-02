@@ -6,6 +6,12 @@ Revenue generating Unit of [MEVBOTS DAO](https://dao.host/mevbots).
 
 This repository keeps releasing flow, metadata, changelog and integration API for mevminer.
 
+## View metadata
+
+```shell
+node index.js
+```
+
 ## Links
 
 * [Flights](https://dao.host/mevbots?tab=Flights) (bot sessions)
