@@ -1,209 +1,37 @@
 {
-  "software": "mevminer 26.07.0-alpha",
+  "software": "mevminer 26.07.32-alpha",
   "description": "Ethereum MEV Searcher.",
   "services": {
-    "MemoryService": {
-      "name": "Workflow",
-      "version": "0.1.0",
-      "changelog": {
-        "0.1.0": [
-          "Workflow chain processing"
-        ]
-      },
-      "gauges": [
-        {
-          "title": "Profit",
-          "subTitle": "per hour",
-          "stateKeyValue": "gaugeProfit"
-        },
-        {
-          "title": "Artifacts",
-          "subTitle": "per hour",
-          "stateKeyValue": "gaugeArtifacts"
-        }
-      ]
-    },
-    "DexScanService": {
-      "name": "DeFiScan",
-      "version": "0.1.0",
-      "changelog": {
-        "0.1.0": [
-          "Load DeX pools data from subgraph"
-        ]
-      },
-      "features": [
-        {
-          "name": "Uniswap",
-          "status": "Live",
-          "image": "Uniswap.svg"
-        },
-        {
-          "name": "PancakeSwap",
-          "status": "Live",
-          "image": "pancakeswap.svg"
-        },
-        {
-          "name": "Sushi",
-          "status": "Live",
-          "image": "sushi.svg"
-        },
-        {
-          "name": "Curve",
-          "status": "Development",
-          "image": "Curve.svg"
-        },
-        {
-          "name": "Fluid",
-          "status": "Backlog",
-          "image": "fluid.png"
-        },
-        {
-          "name": "Aave",
-          "image": "Aave.png",
-          "status": "Backlog"
-        },
-        {
-          "name": "Compound",
-          "image": "Compound.svg",
-          "status": "Backlog"
-        }
-      ],
-      "providers": [
-        {
-          "name": "The Graph",
-          "image": "thegraph.png",
-          "plan": "Growth",
-          "stateKeyCalls": "graphRequests",
-          "stateKeyCost": "cost"
-        }
-      ],
-      "miniGauges": [
-        {
-          "title": "Pools",
-          "stateKeyValue": "pools"
-        },
-        {
-          "title": "Tokens",
-          "stateKeyValue": "tokens"
-        },
-        {
-          "title": "Ticks",
-          "stateKeyValue": "ticks"
-        },
-        {
-          "title": "Markets",
-          "stateKeyValue": "markets"
-        },
-        {
-          "title": "Reserves",
-          "stateKeyValue": "reserves"
-        },
-        {
-          "title": "Lenders",
-          "stateKeyValue": "lenders"
-        }
-      ]
-    },
-    "ArbitrageService": {
-      "name": "♻️ Arbitrage Engine",
-      "version": "0.0.0",
-      "features": [
-        {
-          "name": "mev-boost",
-          "status": "Development"
-        },
-        {
-          "name": "mev-share",
-          "status": "Backlog"
-        }
-      ]
-    },
-    "SandwichEngineService": {
-      "name": "🥪 Sandwich Engine",
-      "version": "0.1.0",
-      "changelog": {
-        "0.1.0": [
-          "Mine 🥪💱 UNISWAP_V2"
-        ]
-      },
-      "features": [
-        {
-          "name": "🥪💱",
-          "status": "Live"
-        },
-        {
-          "name": "🥪⚡️💱",
-          "status": "Development"
-        },
-        {
-          "name": "🥪⚡️",
-          "status": "Development"
-        },
-        {
-          "name": "v2",
-          "status": "Live"
-        },
-        {
-          "name": "v3",
-          "status": "Development"
-        },
-        {
-          "name": "v4",
-          "status": "Development"
-        },
-        {
-          "name": "Curve",
-          "status": "Backlog"
-        }
-      ],
-      "gauges": [
-        {
-          "title": "Winrate",
-          "stateKeyValue": "gaugeWinrate",
-          "stateKeySubValue": "gaugeWinrateSub"
-        }
-      ],
-      "miniGauges": [
-        {
-          "title": "Making time",
-          "stateKeyValue": "avgMakingTime",
-          "redZoneStart": 4,
-          "yellowZoneStart": 1.5
-        }
-      ],
-      "stateObjects": [
-        {
-          "title": "Lose reasons",
-          "stateKey": "loseReasons",
-          "goodOrBad": false
-        },
-        {
-          "title": "Build bundle fail reasons",
-          "stateKey": "buildBundleFailReasons",
-          "goodOrBad": false
-        },
-        {
-          "title": "Not invested assets",
-          "stateKey": "notInvestedAssets",
-          "goodOrBad": false
-        }
-      ]
-    },
-    "LiquidationEngineService": {
-      "name": "💸 Liquidation Engine",
-      "version": "0.0.0",
-      "features": []
-    },
     "ChainService": {
-      "name": "RPC",
-      "version": "0.1.0",
+      "name": "🔌 RPC",
+      "version": "0.1.1",
       "changelog": {
+        "0.1.1": [
+          "Initiate block processing upon receipt of HEAD"
+        ],
         "0.1.0": [
           "eth, subscribe, debug namespaces",
           "Operation via multiple blockchain providers",
           "Track requests per second and average call time"
         ]
       },
+      "features": [
+        {
+          "name": "eth",
+          "status": "Live",
+          "level": 1
+        },
+        {
+          "name": "debug",
+          "status": "Live",
+          "level": 1
+        },
+        {
+          "name": "admin",
+          "status": "Backlog",
+          "level": 2
+        }
+      ],
       "miniGauges": [
         {
           "title": "callMany",
@@ -250,22 +78,254 @@
           "workflowValueIndex": [
             "all"
           ],
-          "lines": [
-            {
-              "name": "Limit",
-              "value": 1000,
-              "color": "#833081"
-            }
-          ]
+          "lines": []
         }
       ]
     },
+    "MemoryService": {
+      "name": "🌀 Core",
+      "version": "0.1.2",
+      "changelog": {
+        "0.1.2": [
+          "Workflow starts 1 second after block.timestamp"
+        ],
+        "0.1.1": [
+          "Flight status fix"
+        ],
+        "0.1.0": [
+          "Workflow chain processing"
+        ]
+      },
+      "gauges": [
+        {
+          "title": "Profit",
+          "subTitle": "per hour",
+          "stateKeyValue": "gaugeProfit"
+        },
+        {
+          "title": "Artifacts",
+          "subTitle": "per hour",
+          "stateKeyValue": "gaugeArtifacts"
+        }
+      ]
+    },
+    "DexScanService": {
+      "name": "🔍 DeFiScan",
+      "version": "0.2.0",
+      "changelog": {
+        "0.2.0": [
+          "On-chain bootstrap, refresh by receipts"
+        ],
+        "0.1.1": [
+          "Refresh DeX pools data for blocks by receipts"
+        ],
+        "0.1.0": [
+          "Load DeX pools data from subgraph"
+        ]
+      },
+      "features": [
+        {
+          "name": "Uniswap",
+          "status": "Live",
+          "image": "Uniswap.svg"
+        },
+        {
+          "name": "PancakeSwap",
+          "status": "Live",
+          "image": "pancakeswap.svg"
+        },
+        {
+          "name": "Sushi",
+          "status": "Live",
+          "image": "sushi.svg"
+        },
+        {
+          "name": "v2-v3 forks",
+          "status": "Development"
+        },
+        {
+          "name": "Curve",
+          "status": "Backlog",
+          "image": "Curve.svg"
+        },
+        {
+          "name": "Fluid",
+          "status": "Backlog",
+          "image": "fluid.png"
+        },
+        {
+          "name": "Aave",
+          "image": "Aave.png",
+          "status": "Backlog"
+        },
+        {
+          "name": "Compound",
+          "image": "Compound.svg",
+          "status": "Backlog"
+        }
+      ],
+      "providers": [],
+      "miniGauges": [
+        {
+          "title": "Pools",
+          "stateKeyValue": "pools"
+        },
+        {
+          "title": "Tokens",
+          "stateKeyValue": "tokens"
+        },
+        {
+          "title": "Ticks",
+          "stateKeyValue": "ticks"
+        },
+        {
+          "title": "Markets",
+          "stateKeyValue": "markets"
+        },
+        {
+          "title": "Reserves",
+          "stateKeyValue": "reserves"
+        },
+        {
+          "title": "Lenders",
+          "stateKeyValue": "lenders"
+        }
+      ],
+      "stateObjects": [
+        {
+          "title": "DEX factories",
+          "stateKey": "dexFactories",
+          "goodOrBad": true
+        }
+      ],
+      "activityIndicator": {
+        "title": "DeFi data is ready",
+        "waitingOrReadyWorkflowKey": "block-receipts-processed"
+      }
+    },
+    "ArbitrageService": {
+      "name": "♻️ Arbitrage Engine",
+      "version": "0.0.0",
+      "features": [
+        {
+          "name": "mev-boost",
+          "status": "Development"
+        },
+        {
+          "name": "mev-share",
+          "status": "Backlog"
+        }
+      ]
+    },
+    "SandwichEngineService": {
+      "name": "🥪 Sandwich Engine",
+      "version": "0.1.3",
+      "changelog": {
+        "0.1.3": [
+          "Missed fix"
+        ],
+        "0.1.2": [
+          "🥪💱 UNISWAP_V4",
+          "Increase in accuracy"
+        ],
+        "0.1.1": [
+          "🥪💱 UNISWAP_V3"
+        ],
+        "0.1.0": [
+          "🥪💱 UNISWAP_V2"
+        ]
+      },
+      "features": [
+        {
+          "name": "🥪💱",
+          "status": "Live",
+          "level": 1
+        },
+        {
+          "name": "🥪⚡️💱",
+          "status": "Development",
+          "level": 1
+        },
+        {
+          "name": "v2-v4",
+          "status": "Live",
+          "level": 1
+        },
+        {
+          "name": "Fee tokens",
+          "status": "Development",
+          "level": 1
+        },
+        {
+          "name": "🥪⚡️",
+          "status": "Development",
+          "level": 2
+        },
+        {
+          "name": "v2-v3 forks",
+          "status": "Development",
+          "level": 2
+        },
+        {
+          "name": "📦",
+          "status": "Development",
+          "level": 2
+        },
+        {
+          "name": "+♻️",
+          "status": "Development",
+          "level": 2
+        },
+        {
+          "name": "Curve",
+          "status": "Backlog",
+          "level": 2
+        }
+      ],
+      "gauges": [
+        {
+          "title": "Winrate",
+          "stateKeyValue": "gaugeWinrate",
+          "stateKeySubValue": "gaugeWinrateSub"
+        }
+      ],
+      "miniGauges": [
+        {
+          "title": "Making time",
+          "stateKeyValue": "avgMakingTime",
+          "redZoneStart": 4,
+          "yellowZoneStart": 1.5
+        }
+      ],
+      "stateObjects": [
+        {
+          "title": "Lose reasons",
+          "stateKey": "loseReasons",
+          "goodOrBad": false
+        },
+        {
+          "title": "Build bundle fail reasons",
+          "stateKey": "buildBundleFailReasons",
+          "goodOrBad": false
+        },
+        {
+          "title": "Not invested assets",
+          "stateKey": "notInvestedAssets",
+          "goodOrBad": false
+        }
+      ]
+    },
+    "LiquidationEngineService": {
+      "name": "💸 Liquidation Engine",
+      "version": "0.0.0",
+      "features": []
+    },
     "MempoolService": {
-      "name": "Mempool Extractor",
+      "name": "🗄️ Mempool",
       "version": "0.1.0",
       "changelog": {
         "0.1.0": [
-          "Extracts known pools swaps from pending transactions stream",
+          "Extracts swaps from pending transactions stream",
           "Decodes router calls and merges slippage with swap hops"
         ]
       },
@@ -332,7 +392,55 @@
           "title": "Slippage merged",
           "stateKeyValue": "miniGaugeSlippageMerged"
         }
-      ]
+      ],
+      "activityIndicator": {
+        "title": "Swap transaction detected",
+        "impulseWorkflowKey": "swap"
+      }
+    },
+    "MevShareEventStreamService": {
+      "name": "🤝 MEV-Share",
+      "version": "0.1.2",
+      "changelog": {
+        "0.1.2": [
+          "Gauges update"
+        ],
+        "0.1.1": [
+          "Start watching after flight takeoff and record disclosed protected swaps in workflow"
+        ],
+        "0.1.0": [
+          "Listen to Flashbots MEV-Share hints and expose stream statistics"
+        ]
+      },
+      "features": [
+        {
+          "name": "MEV-Share SSE",
+          "status": "Live"
+        }
+      ],
+      "gauges": [
+        {
+          "title": "Events",
+          "stateKeyValue": "gaugeEventsPerMinute",
+          "subTitle": "per minute",
+          "showInFlightWindow": false
+        },
+        {
+          "title": "Bundles",
+          "stateKeyValue": "gaugeBundlesPerMinute",
+          "subTitle": "per minute"
+        },
+        {
+          "title": "Transactions",
+          "stateKeyValue": "gaugeTransactionsPerMinute",
+          "subTitle": "per minute"
+        }
+      ],
+      "miniGauges": [],
+      "activityIndicator": {
+        "title": "Swap transaction detected",
+        "impulseWorkflowKey": "mev-protect-swap"
+      }
     }
   }
 }
