@@ -1,6 +1,6 @@
 {
   "name": "mevminer",
-  "version": "26.07.0-alpha",
+  "version": "26.07.32-alpha",
   "description": "Ethereum MEV Searcher metadata",
   "main": "index.js",
   "repository": "https://github.com/mevmachines/mevminer.git",
